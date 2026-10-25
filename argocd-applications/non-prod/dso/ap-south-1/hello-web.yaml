@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-web-dso-non-prod-aps1
+  namespace: argocd-system
+spec:
+  project: sandbox
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hello-web
+  source:
+    repoURL: https://github.com/abhinav-gautam09/infra-sandbox.git
+    path: helm-charts/hello-web
+    targetRevision: main
+    helm:
+      valueFiles:
+        - ../../helm-overrides/non-prod/dso/ap-south-1/hello-web/values.yaml

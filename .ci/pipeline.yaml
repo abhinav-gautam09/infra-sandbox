@@ -1,0 +1,8 @@
+kind: gitops
+required:
+  - secret-scan
+  - yaml-lint
+steps:
+  exclude:
+    - step: config-lint
+      reason: its rules are for application services, not infra charts
