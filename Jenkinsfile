@@ -40,6 +40,7 @@ spec:
 '''
     }
   }
+  options { disableConcurrentBuilds(abortPrevious: true) }
   stages {
     stage('setup') {
       steps {
@@ -50,7 +51,7 @@ spec:
     }
     stage('checks') {
       parallel {
-        stage('yaml-lint') { steps { script { repoCheck('yaml-lint') } } }
+        stage('yaml-lint') { steps { script { sleep 120; repoCheck('yaml-lint') } } }
         stage('shellcheck') { steps { script { repoCheck('shellcheck') } } }
         stage('flaky') { steps { script { repoCheck('flaky') } } }
         stage('secret-scan') {
