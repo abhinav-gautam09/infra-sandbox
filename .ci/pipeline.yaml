@@ -1,5 +1,6 @@
 kind: gitops
 required:
+  - flaky
   - secret-scan
   - yaml-lint
 steps:
