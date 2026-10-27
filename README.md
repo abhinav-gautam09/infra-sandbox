@@ -5,3 +5,4 @@ probe 2026-10-27T10:54:24Z
 rapid push 1 10:55:49
 rapid push 2 10:56:02
 rapid push 3 10:56:15
+inflight A 10:59:17
