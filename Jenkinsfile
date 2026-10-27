@@ -40,6 +40,7 @@ spec:
 '''
     }
   }
+  options { disableConcurrentBuilds(abortPrevious: true) }
   stages {
     stage('setup') {
       steps {
